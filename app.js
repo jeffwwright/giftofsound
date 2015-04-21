@@ -3,25 +3,17 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var SpotifyWebApi = require('spotify-web-api-node');
+var ig = require('instagram-node').instagram();
+
+// Every call to `ig.use()` overrides the `client_id/client_secret`
+// or `access_token` previously entered if they exist.
+ig.use({ access_token: 'YOUR_ACCESS_TOKEN' });
+ig.use({ client_id: '15ab281ad82d4b2a85c1677085d6fff6',
+         client_secret: 'a25d44c826f0427ebc3c4c0a24663d17' });
 
 var client_id = '8e6b936117814bcebd731391536e6c47'; // Your client id
 var client_secret = '382289eb9d1d47bfbed4f97aa8723a88'; // Your client secret
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
-
-// credentials are optional
-var spotifyApi = new SpotifyWebApi({
-  clientId : '8e6b936117814bcebd731391536e6c47', // Your client id
-  clientSecret : '382289eb9d1d47bfbed4f97aa8723a88', // Your client secret
-  redirectUri : 'http://localhost:8888/callback' // Your redirect uri
-});
-
-// Get Elvis' albums
-spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
-  .then(function(data) {
-    console.log('Artist albums', data.body);
-  }, function(err) {
-    console.error(err);
-  });
 
   var generateRandomString = function(length) {
     var text = '';
@@ -35,11 +27,16 @@ spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
 
   var stateKey = 'spotify_auth_state';
 
-  var app = express();
+var app = express();
+
 app.use(express.static(__dirname + '/public'))
    .use(cookieParser());
 
-app.get('/login', function(req, res) {
+app.get('/instagramlogin', function(req, res) {
+
+});
+
+app.get('/spotifylogin', function(req, res) {
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
 

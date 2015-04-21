@@ -9,10 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Give the Gift of Music</title>
+    <title>Freelancer - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/freelancer.css" rel="stylesheet">
@@ -22,74 +22,13 @@
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-
-        <!-- Plugin JavaScript -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-        <script src="js/classie.js"></script>
-        <script src="js/cbpAnimatedHeader.js"></script>
-
-        <!-- Contact Form JavaScript -->
-        <script src="js/jqBootstrapValidation.js"></script>
-        <script src="js/contact_me.js"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="js/freelancer.js"></script>
-
-        <script>
-          function allowDrop(ev) {
-              ev.preventDefault();
-          }
-
-          function drag(ev) {
-              ev.dataTransfer.setData("text", ev.target.id);
-          }
-
-          function drop(ev) {
-              ev.preventDefault();
-              var data = ev.dataTransfer.getData("text");
-              ev.target.appendChild(document.getElementById(data));
-              document.getElementById('selected-playlist-img').appendChild(document.getElementById(data).cloneNode(true));
-              document.getElementById('proceed-to-images').style.display = 'block';
-                      }
-          </script>
-
-<script>
-$(function() {
-    if ( window.location.href.indexOf("access_token") > -1 )$(document).scrollTop( $("#playlists").offset().top );
-});
-
-  function copyPhotos() {
-    document.getElementById("prevImg1").src = document.getElementById("img1").value;
-    document.getElementById("prevImg2").src = document.getElementById("img2").value;
-    document.getElementById("prevImg3").src = document.getElementById("img3").value;
-    document.getElementById("prevImg4").src = document.getElementById("img4").value;
-    document.getElementById("img1_big").src = document.getElementById("img1").value;
-    document.getElementById("message-preview").value = document.getElementById("messageinput").value;
-  }
-</script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-      #proceed-to-images,#loggedin {
-        display: none;
-      }
-      .text-overflow {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 500px;
-      }
-    </style>
+
 </head>
 
 <body id="page-top" class="index">
@@ -105,7 +44,7 @@ $(function() {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#page-top">Give the Gift of Music</a>
+                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -115,13 +54,13 @@ $(function() {
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#loginspotify">Let's get started</a>
+                        <a href="#portfolio">Portfolio</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about"></a>
+                        <a href="#about">About</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact"></a>
+                        <a href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -137,193 +76,21 @@ $(function() {
                 <div class="col-lg-12">
                     <img class="img-responsive" src="img/profile.png" alt="">
                     <div class="intro-text">
-                        <span class="name">Give the Gift of Music</span>
+                        <span class="name">You got a gift!</span>
                         <hr class="star-light">
-                        <span class="skills">Share the audio you love with your friends</span>
+                        <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Spotify Login Section -->
-    <section id="loginspotify">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12 text-center">
-                  <br>
-                  <h2>Your Accounts</h2>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-              <div id="login" name="login">
-                <a href="/spotifylogin" class="button special big"><img src="img/spotify.jpg"></a>
-              </div>
-              <div id="loggedin" name="loggedin">
-                <div id="user-profile">
-                </div>
-                <div id="oauth">
-                </div>
-                <!-- Handlebar Scripts -->
-                <script id="user-profile-template" type="text/x-handlebars-template">
-                  <h1>Logged in as {{display_name}}</h1>
-                  <div class="media">
-                    <div class="media-body">
-                        <dl class="dl-horizontal">
-                          <dd id="spotifyid">{{id}}</dd>
-                          <dd>{{email}}</dd>
-                          <dd>{{country}}</dd>
-                        </dl>
-                      </div>
-                    </div>
-                  </script>
-                </script>
-                <div class="page-scroll"><a href="#playlists">Choose your Music</a></div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="success" id="playlists">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                </br>
-                <h2>Your Playlists</h2>
-                    <hr class="star-light">
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-12 text-center">
-                <p>Gift a Playlist by dragging it to the right</p></br>
-              </div>
-                <div class="col-lg-4 col-lg-offset-2">
-                  <div id="myPlaylists" draggable="true" ondragstart="drag(event)">
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                    <div id="selectedPlaylist" style="width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    </div>
-                </div>
-                <div id="proceed-to-images"class="col-lg-8 col-lg-offset-2 text-center">
-                    <div class="page-scroll"><a href="#images">pick some memories</a></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Images Section -->
-    <section id="images">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                  </br>
-                  <h2>Add Images</h2>
-                    <hr class="star-primary">
-                    <div id="selected-playlist-img"></div></br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                  <form name="sentMessage" id="imagesForm" novalidate>
-                  <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                      <label>Image 1</label>
-                      <input type="text" class="form-control" placeholder="Image 1" id="img1" required data-validation-required-message="Please enter your name.">
-                      <p class="help-block text-danger"></p>
-                    </div>
-                  </div>
-                  <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                      <label>Image 2</label>
-                      <input type="text" class="form-control" placeholder="Image 2" id="img2" required data-validation-required-message="Please enter your name.">
-                      <p class="help-block text-danger"></p>
-                      </div>
-                    </div>
-                    <div class="row control-group">
-                      <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Image 3</label>
-                        <input type="text" class="form-control" placeholder="Image 3" id="img3" required data-validation-required-message="Please enter your name.">
-                        <p class="help-block text-danger"></p>
-                        </div>
-                      </div>
-                      <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                          <label>Image 4</label>
-                          <input type="text" class="form-control" placeholder="Image 4" id="img4" required data-validation-required-message="Please enter your name.">
-                          <p class="help-block text-danger"></p>
-                        </div>
-                      </div>
-                      <br>
-                      <div id="success"></div>
-                      <div class="row">
-                        <div class="form-group col-xs-12">
-                          <div class="page-scroll">
-                            <a onclick="copyPhotos();" href="#message">Add a message!</a>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Message Section -->
-    <section id="message">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                  </br>
-                  <h2>write a note</h2>
-                    <hr class="star-primary">
-                    <div id="selected-playlist-img"></div></br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                  <form name="sentMessage" id="contactForm" novalidate>
-                  <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                      <label>Recipient Email Address</label>
-                      <input type="text" class="form-control" placeholder="Recipient Email" id="recipient_email" required data-validation-required-message="Please enter recipient email address.">
-                      <p class="help-block text-danger"></p>
-                    </div>
-                  </div>
-                  <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                      <label>Message</label>
-                      <input id="messageinput" type="text" class="form-control" placeholder="Gift Message" id="gift_message" required data-validation-required-message="Please enter a custom message.">
-                      <p class="help-block text-danger"></p>
-                      </div>
-                    </div>
-
-                      <br>
-                      <div id="success"></div>
-                      <div class="row">
-                        <div class="form-group col-xs-12">
-                          <div class="page-scroll">
-                            <!-- we need to actually connect to the DB at this point -->
-                            <a href="#portfolio">review your gift!</a>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Picture Grid Section -->
+    <!-- Portfolio Grid Section -->
     <section id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                </br>
-                    <h2>Review your Gift</h2>
+                    <h2>Portfolio</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -335,7 +102,7 @@ $(function() {
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img id="prevImg1" src="" class="img-responsive" alt="">
+                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -345,7 +112,7 @@ $(function() {
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img id="prevImg2" src="" class="img-responsive" alt="">
+                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -355,7 +122,7 @@ $(function() {
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img id="prevImg3" src="" class="img-responsive" alt="">
+                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -365,7 +132,7 @@ $(function() {
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img id="prevImg4" src="" class="img-responsive" alt="">
+                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -375,7 +142,7 @@ $(function() {
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="" class="img-responsive" alt="">
+                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -385,11 +152,76 @@ $(function() {
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="" class="img-responsive" alt="">
+                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
-            <div><p id="message_preview"></p></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Live It</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="#setpreset" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Set as a Preset
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="setpreset">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Log in to SoundTouch</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Password</label>
+                                <input type="password" class="form-control" placeholder="Password" id="password" required data-validation-required-message="Please enter your password.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -399,10 +231,11 @@ $(function() {
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-md-4">
-
+                        <h3>Location</h3>
+                        <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>Share with your friends</h3>
+                        <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
@@ -422,7 +255,8 @@ $(function() {
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-
+                        <h3>About Freelancer</h3>
+                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
                     </div>
                 </div>
             </div>
@@ -431,7 +265,7 @@ $(function() {
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Bose Corporation 2015
+                        Copyright &copy; Your Website 2014
                     </div>
                 </div>
             </div>
@@ -446,7 +280,7 @@ $(function() {
     </div>
 
     <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="false">
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -458,11 +292,10 @@ $(function() {
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                          <h2>Blues Festival</h2>
-                          <hr class="star-primary">
-                          <img id="img1_big" src="" class="img-responsive img-centered" alt="">
-                          <p>Remember that time last summer at the blues festival? This music reaaly brought me back!!</p>
-
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -496,11 +329,10 @@ $(function() {
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Blues Festival</h2>
+                            <h2>Project Title</h2>
                             <hr class="star-primary">
-                            <img id="img2_big" src="" class="img-responsive img-centered" alt="">
-                            <p>Remember that time last summer at the blues festival? This music reaaly brought me back!!</p>
-
+                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -573,8 +405,8 @@ $(function() {
                         <div class="modal-body">
                             <h2>Project Title</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <img id="img1_big" src="" class="img-responsive img-centered" alt="">
+                            <p>Remember that time last summer at the blues festival? This music reaaly brought me back!!</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
                                     <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
@@ -646,144 +478,48 @@ $(function() {
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <h2>Project Title</h2>
-                            <div id="myPlaylists">
-                            </div>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
+                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Handlebar Scripts -->
-				<script id="user-profile-template" type="text/x-handlebars-template">
-					<h1>Logged in as {{display_name}}</h1>
-					<div class="media">
-						<div class="media-body">
-							<dl class="dl-horizontal">
-								<dd id="spotifyid">{{id}}</dd>
-								<dd>{{email}}</dd>
-								<dd>{{country}}</dd>
-							</dl>
-						</div>
-					</div>
-				</script>
-
-				<script id="oauth-template" type="text/x-handlebars-template">
-					<h2>oAuth info</h2>
-					<dl class="dl-horizontal">
-						<dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
-						<dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}></dd>
-					</dl>
-				</script>
-
-				<script id="my-playlists-template" type="text/x-handlebars-template">
-					<dl class="dl-horizontal">
-						{{#.}}
-            <div id="{{this.id}}" draggable="true" ondragstart="drag(event)">
-						<dd>{{this.name}}</dd>
-						<dd class="clearfix"><img class="thumb" height="60px" width="60px" src="{{this.images.0.url}}"></dd>
-            </div>
-            {{/.}}
-						<ul id ="items_list" data-role="listview" data-filter="true">
-						</ul>
-					</dl>
-				</script>
-
-				<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-				<script>
-					(function() {
-
-						/**
-						* Obtains parameters from the hash of the URL
-						* @return Object
-						*/
-						function getHashParams() {
-							var hashParams = {};
-							var e, r = /([^&;=]+)=?([^&;]*)/g,
-									q = window.location.hash.substring(1);
-							while ( e = r.exec(q)) {
-								hashParams[e[1]] = decodeURIComponent(e[2]);
-							}
-							return hashParams;
-						}
-
-						var userProfileSource = document.getElementById('user-profile-template').innerHTML,
-								userProfileTemplate = Handlebars.compile(userProfileSource),
-								userProfilePlaceholder = document.getElementById('user-profile');
-
-						var oauthSource = document.getElementById('oauth-template').innerHTML,
-								oauthTemplate = Handlebars.compile(oauthSource),
-								oauthPlaceholder = document.getElementById('oauth');
-
-						var myPlaylistsSource = document.getElementById('my-playlists-template').innerHTML,
-								myPlaylistsTemplate = Handlebars.compile(myPlaylistsSource),
-								myPlaylistsPlaceholder = document.getElementById('myPlaylists');
-
-            var spotifyid = 'test';
-
-						var params = getHashParams();
-
-						var access_token = params.access_token,
-								refresh_token = params.refresh_token,
-								error = params.error;
-
-						if (error) {
-							alert('There was an error during the authentication');
-						} else {
-							if (access_token) {
-								// render oauth info
-								oauthPlaceholder.innerHTML = oauthTemplate({
-									access_token: access_token,
-									refresh_token: refresh_token
-								});
-
-								$.ajax({
-										url: 'https://api.spotify.com/v1/me',
-										headers: {
-											'Authorization': 'Bearer ' + access_token
-										},
-										success: function(response) {
-											userProfilePlaceholder.innerHTML = userProfileTemplate(response);
-
-											$('#login').hide();
-											$('#loggedin').show();
-                      spotifyid = document.getElementById('spotifyid');
-										}
-								});
-
-								$.ajax({
-										url: 'https://api.spotify.com/v1/users/jeffwwright/playlists',
-										headers: {
-											'Authorization': 'Bearer ' + access_token
-										},
-										success: function(response) {
-											myPlaylistsPlaceholder.innerHTML = myPlaylistsTemplate(response.items);
-										}
-									});
-								} else {
-									// render initial screen
-									$('#login').show();
-									$('#loggedin').hide();
-							}
-
-							document.getElementById('obtain-new-token').addEventListener('click', function() {
-								$.ajax({
-									url: '/refresh_token',
-									data: {
-										'refresh_token': refresh_token
-									}
-								}).done(function(data) {
-										access_token = data.access_token;
-										oauthPlaceholder.innerHTML = oauthTemplate({
-										access_token: access_token,
-										refresh_token: refresh_token
-									});
-								});
-							}, false);
-						}
-					})();
-				</script>
     </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
 
 </body>
 

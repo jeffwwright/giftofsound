@@ -82,7 +82,8 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #18bc9c;
+    background: #FFB03B;
+    height: 100vh;
 }
 
 header .container {
@@ -172,6 +173,7 @@ header .intro-text .skills {
 
 section {
     padding: 100px 0;
+    height: 100vh;
 }
 
 section h2 {
@@ -181,7 +183,7 @@ section h2 {
 
 section.success {
     color: #fff;
-    background: #18bc9c;
+    background: #468966;
 }
 
 section.success a,
